@@ -114,3 +114,20 @@ console.log(jump());
 // obj.jump();
  
 // console.log(obj.getCounter());
+
+
+// Throttle and debounce functions using closure
+// تابع Throttle مشخص میکنه که کدهای ما توی یک بازه زمانی مشخص فقط یک بار اجرا بشه.
+// مثلاً می‌خوایم یک قطعه کد توی بازه زمانی ۱۰ ثانیه، حداکثر یک‌بار اجرا بشه. اینجا از تابع Throttle استفاده می‌کنیم.
+
+function throttle (fn, delay) {
+    let count =null;
+    return function () {
+        if(count + delay < Date.now()) {
+            fn();
+            count = Date.now();
+        }
+    }
+};
+
+const test1 = throttle(console.log('this is test'), 5000);

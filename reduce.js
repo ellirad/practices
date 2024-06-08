@@ -21,3 +21,7 @@ let totalArr = arr.reduce(function(total, current) {
 })
 
 console.log(totalArr);
+
+array.reduce(function(total, currentValue) {
+
+})
